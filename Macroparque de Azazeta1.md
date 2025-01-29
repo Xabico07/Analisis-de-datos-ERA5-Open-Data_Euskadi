@@ -60,10 +60,10 @@ x2=nc.Dataset('/Datos de viento ERA5/Datos_2013-2022x.nc')
 ```
 
 Puede llamarse a cada una de las variables para mostrar sus datos de forma
-completa o para unas dimensiones específicas. Lo más sensato si se quiere
-trabajar con ellos numéricamente es almacenar dichos datos en una lista. La
+completa o para unas dimensiones específicas. Lo más cómodo si se quiere
+trabajar con ellos numéricamente es almacenar dichos datos en un arreglo numérico. La
 librería numpy (importada habitualmente como np), entre otras cosas, permite
-generar esa lista mediante el módulo 'array'.
+generar dicha lista mediante el módulo 'array'.
 
 ```python
 
