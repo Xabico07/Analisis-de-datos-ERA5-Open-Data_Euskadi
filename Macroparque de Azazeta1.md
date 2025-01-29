@@ -35,7 +35,7 @@ root group (NETCDF3_64BIT_OFFSET data model, file format NETCDF3):
     variables(dimensions): float32 longitude(longitude), float32 latitude(latitude), int32 time(time), int16 u100(time, latitude, longitude), int16 v100(time, latitude, longitude), int16 t2m(time, latitude, longitude), int16 sp(time, latitude, longitude)
     groups: 
 ```
-Para trabajar con un solo archivo, conviene agrupar las cinco descargas:
+Para trabajar con un solo archivo, conviene agrupar los cinco ficheros descargados:
 
 ```python
 # Se agrupan las cinco descargas
