@@ -1,12 +1,12 @@
 Hasta ahora no se ha tenido en cuenta que todos los datos generados y analizados
-tienen varias longitudes y latitudes asociadas. El parque eólico de Azazta solo
+tienen varias longitudes y latitudes asociadas. El parque eólico de Azazeta solo
 existe en una única celda, por lo que hay que averiguar en cual de las 54 posibles
-se encuentra. En términos de Python, se quiere determinar qué elementos en
+se encuentra (9 componentes de longitud y 6 de latitud). En términos de Python, se quiere determinar qué elementos en
 la dimensión de longitud y latitud representan la celda donde se encuentra el
 macroparque. El módulo 'nearest.py' facilita dicho proceso. En él se define una
 serie de funciones para localizar el punto más cercano en la superficie de una
-esfera (aproximadamente el modelo de la Tierra) dado un par de coordenadas
-(latitud y longitud).
+esfera (aproximadamente el modelo de la Tierra) dadas las coordenadas
+definidas por la latitud y longitud del lugar de interés.
 
 ```python
 
@@ -51,7 +51,7 @@ def cercano(rlon,rlat,rlons,rlats):
                     theCos=1.0
     print('COORDENADA DE LA MALLA MÁS CERCANA A AZÁCETA')
     print(lons[ILON],lats[ILAT])
-    return (ILON,ILAT,Re*M.acos(theCos))
+    return (ILON,ILAT)
 
 ```
 
@@ -78,7 +78,7 @@ Para el caso estudiado, se deben definir los argumentos de la función principal
 # Las coordenadas del parque son (Alto de Azazeta): 42.78499783697841, -2.542525562758741
 
 
-# Las coordenadas de longitud y latitud del archivo NetCDF 'Un_Datos_2013-2022.nc' generado 
+# Las coordenadas de longitud y latitud del archivo NetCDF 'Un_Datos_2013-2022.nc' generado:
 
 lons=np.array(d.variables["longitude"][:],'d')
 lats=np.array(d.variables["latitude"][:],'d')
@@ -109,11 +109,11 @@ Coordenadas mallas en grados
 [-3.5  -3.25 -3.   -2.75 -2.5  -2.25 -2.   -1.75]
 [43.5  43.25 43.   42.75 42.5 ]
 
-COORDENADA DE LA MALLA MÁS CERCANA A AZÁCETA
+COORDENADA DE LA MALLA MÁS CERCANA A AZAZETA
 -2.5 42.75
-(4, 3, 5.2140376683177285)
+(4, 3)
 
 ```
-Según los resultados arrojados, la celda con la que se debe trabajar es la definida con las coordenadas (42.75,-2.5), lo cual tiene sentido dadas las coordenadas reales del parque. 
+Según los resultados arrojados, la celda con la que se debe trabajar es la la asociada a las coordenadas (42.75,-2.5), lo cual tiene sentido dadas las coordenadas reales del parque. 
 Por lo tanto, los datos de velocidad normalizada que deben ser aplicados sobre la curva de potencia vienen definidos por el quinto elemento de la dimensión de longitud y el cuarto de la dimensión de latitud.
 
