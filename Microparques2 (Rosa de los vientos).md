@@ -12,6 +12,18 @@ ax.bar(Total_d, Total_v2, normed=True, opening=0.8, edgecolor="white")
 ax.set_legend()
 
 ```
-Añadir la lista de velocidades 'Total_v2' permite observar cómo se distribuyen las velocidades del viento para cada dirección. Así, una rosa de los vientos puede verse como sigue:
+Añadir la lista de velocidades 'Total_v2' permite observar cómo se distribuyen las velocidades del viento para cada dirección. Un ejemplo se muestra en la misma carpeta.
 
-![Gráfico de datos](Screenshots/Captura de pantalla 2024-05-05 213636.png)
+De la rosa de los vientos se determinan las velocidades que sí se deben tener en
+cuenta a la hora de calcular cada factor de capacidad de las microturbinas. Para filtrar los datos que sí interesan de los que no, se puede emplear el siguiente código:
+
+```python
+
+# Se filtran las direcciones que cumplen con las condiciones determinadas para cada caso (X e Y son los grados que delimitan el filtro)
+direcciones_filtradas = [dir for dir in Total_d if (X <= dir <= Y)]
+
+# Se obtienen las velocidades correspondientes a las direcciones filtradas
+velocidades_filtradas = [Total_v2[i] for i, dir in enumerate(Total_d) if (X <= dir <= Y)]
+
+```
+La lista de datos 'velocidades_filtradas' es la adecuada para el posterior cálculo del factor de capacidad. La visualización de datos se realiza de forma idéntica al caso del macroparque de Azazeta.
