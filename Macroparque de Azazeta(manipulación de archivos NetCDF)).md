@@ -279,7 +279,7 @@ def create_bare_COARDS(ncname,tdat=None,zdat=None,latdat=None,londat=None):
 ```
 La variable que interesa introducir mediante ncstruct.py en un nuevo fichero
 es la velocidad normalizada, la cual ya tiene en cuenta el cambio de densidad
-con la altitud. Se debe hacer uso del módulo implementado y las relaciones físicas necesarias:
+con la altitud. Se debe hacer uso del módulo ncstruct.py implementado y las relaciones físicas necesarias:
 
 ```python
 
