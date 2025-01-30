@@ -1,5 +1,5 @@
 Con el objetivo de visualizar los resultados, la librería 'Matplotlib' permite crear gráficos y visualizaciones de datos. En
-concreto, el módulo 'Matplotlib.hist' permite visualizar histogramas generadas mediante 'numpy'. Empleando las definiciones establecidas:
+concreto, el módulo 'Matplotlib.hist' permite visualizar histogramas generadas mediante 'numpy'. Empleando las definiciones establecidas anteriormente:
 
 ```python
 
